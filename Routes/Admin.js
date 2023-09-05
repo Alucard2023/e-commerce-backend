@@ -2,7 +2,7 @@ const express=require ("express");
 const { validation, loginValidator, registerValidator } = require("../Middleware/Validator");
 const { registerAdmin, loginAdmin, updateAdminInfos, updateAdminPassword } = require("../Controllers/Admin");
 const isAuthAdmin = require("../Middleware/IsAuthAdmin");
-const { getusers } = require("../Controllers/user");
+const { getusers } = require("../Controllers/User");
 
 
 

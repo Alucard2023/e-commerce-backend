@@ -1,6 +1,6 @@
 const express=require ("express");
 const { registerValidator, validation, loginValidator} = require("../Middleware/Validator");
-const { register, login, updateInfos, getOneUser, updatePassword } = require("../Controllers/user");
+const { register, login, updateInfos, getOneUser, updatePassword } = require("../Controllers/User");
 const isAuth = require("../Middleware/IsAuth");
 
 

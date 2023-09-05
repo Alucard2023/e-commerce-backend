@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken")
 const isAuthAdmin = async(req , res , next) => {
     try {
         // test if user has token 
-        const token= req.headers["authorization"]
+        const token = req.headers["authorization"]
         console.log(token)
 
         if (!token){

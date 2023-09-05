@@ -9,7 +9,7 @@ const userSchema = mongoose.Schema({
         required :true
     },
 
-    lastname:{
+    name:{
         type :String,
         required  :true
     },
@@ -19,21 +19,14 @@ const userSchema = mongoose.Schema({
         required : true ,
         unique :true
     },
-    
-
-    Adress:{
-        type:String ,
-        
-
-        
-    },
+      
     password : {
         type : String,
         required : true,
     },
 
 
-})
+},{ timestamps: true } );
 
 
 module.exports = User = mongoose.model('user',userSchema)
