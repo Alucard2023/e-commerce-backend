@@ -1,9 +1,11 @@
 const express = require("express") ;
 const router = express.Router();
 const {  deleteproduct, getproducts, getOneProduct, addproduct,} = require("../Controllers/Product");
+const upload = require("../Middleware/upload");
 
+router.post('/addProduct',upload.single("imageURL"),addproduct);
+console.log()
 
-router.post('/addProduct',addproduct);
 
 
 // update contact

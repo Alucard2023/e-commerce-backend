@@ -63,12 +63,29 @@ exports.loginAdmin = async(req,res) =>{
         
     }
 }
+exports.getAdmin = async (req, res) => {
+    try {
+        const {_id} = req.params; // Récupérez l'ID de l'administrateur à partir des paramètres d'URL
+        const adminData = await Admin.findById(_id); // Utilisez Mongoose pour trouver l'administrateur par ID
+
+        if (!adminData) {
+            return res.status(404).json({ msg: "Administrateur non trouvé" });
+        }
+
+        // Si l'administrateur est trouvé, renvoyez les données administratives
+        res.status(200).json(adminData);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ msg: "Erreur lors de la récupération des données administratives" });
+    }
+};
+
 
 
 exports.updateAdminInfos = async(req,res) =>{
     try {
         const{_id}= req.params;
-        const { firstname , lastname , email }  = req.body;      
+        const { firstname , name , email }  = req.body;      
 
         const updatedAdmin = await Admin.findOneAndUpdate(req.params, {$set:{...req.body}})     
         

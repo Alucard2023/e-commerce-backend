@@ -101,6 +101,9 @@ exports.updateInfos = async(req,res) =>{
         
         await updatedUser.save()
         
+
+
+        
 return  res.status(200).send({success : [{ msg : "Mise à jour avec succés..."}] , user : updatedUser, token })
         
     } catch (error) {
